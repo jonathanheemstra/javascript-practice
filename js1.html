@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>my javascript page</title>
+  <script>
+    var today = new Date();
+    var hourNow = today.getHours();
+    var greeting;
+
+    if (hourNow > 18) {
+      greeting = 'evening!';
+    } else if (hourNow > 12) {
+      greeting = 'afternoon!';
+    } else if (hourNow > 0) {
+      greeting = 'morning!';
+    } else {
+      greeting = 'Welcome!';
+    }
+  </script>
+</head>
+<body>
+  <h1>What time is it?</h1>
+  <script>document.write('<h3>' + greeting + '</h3>');</script>
+</body>
+</html>

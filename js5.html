@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta http-equiv="no-cache">
+    <title>Dice Roller</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <style media="screen">
+        body {
+            margin: auto;
+            width: 960px;
+            text-align: center;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        h1 {
+            font-size: 100px;
+            width: 50%;
+            float: left;
+        }
+
+        h3 {
+            font-size: 50px;
+            margin: 25px auto 25px auto;
+        }
+
+        .button {
+            padding: 20px 75px;
+            text-align: center;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 35px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .flat {
+            background: #2C3E50;
+            color: white;
+            border-right: 3px solid #19242E;
+            border-bottom: 5px solid #19242E;
+        }
+
+        .flat:hover {
+            background: #FF2819;
+            color: white;
+            border-right: 3px solid #AA2819;
+            border-bottom: 5px solid #AA2819;
+        }
+
+        .flat:active {
+            border: 0px;
+            transform: translate(3px, 5px);
+            -webkit-transform: translate(3px, 5px);
+        }
+
+        a {
+            text-decoration: none;
+        }
+        .roletotal {
+          border: 1px solid black;
+          clear: both;
+          margin: 0px auto 50px auto;
+          width: 30%;
+        }
+        .roletotal p {
+          margin: -12px 99px;
+          font-size: 20px;
+          background-color: white;
+          width: 90px;
+          position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dice">
+        <h1 id="one"></h1>
+        <h1 id="two"></h1>
+    </div>
+    <div class="roletotal">
+        <p>Total</p>
+        <h3 id="total"></h3>
+    </div>
+    <script type="text/javascript">
+        function dice(min, max) {
+            var roleOne = Math.floor(Math.random() * (max - min + 1)) + min;
+            var roleTwo = Math.floor(Math.random() * (max - min + 1)) + min;
+            var role = [roleOne, roleTwo];
+            return role;
+        }
+        var diceOne = document.getElementById('one').innerHTML = dice(0, 6)[0];
+        var diceTwo = document.getElementById('two').innerHTML = dice(0, 6)[1];
+        var total = document.getElementById('total').innerHTML = diceOne + diceTwo;
+    </script>
+    <a href="javascript:window.location.reload();" class="button flat">Roll</a>
+</body>
+
+</html>

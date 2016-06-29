@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Free Web tutorials">
+    <meta name="keywords" content="Seattle Mariners,Baseball,Trade Deadline">
+    <title>Settlers of Catan Score Keeper</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <style>
+        html {}
+
+        * {
+            font-family: 'Open Sans', sans-serif;
+            background-color: white;
+        }
+
+        h1 {
+            font-size: 43px;
+            margin: 0px;
+        }
+
+        h2 {
+            font-size: 35px;
+            text-align: center;
+        }
+
+        #yourscore {
+            font-size: 200px;
+            margin: 0px;
+            text-align: center;
+        }
+
+        label {
+            font-size: 20px;
+        }
+
+        body {
+            margin: 0 auto;
+            width: 50%;
+            background-color: white;
+        }
+
+        form {
+            float: left;
+            width: 40%;
+        }
+
+        option {
+            font-size: 18px;
+        }
+
+        fieldset {
+            border: none;
+            margin: 20px 0px;
+            padding: 0px;
+        }
+
+        select {
+            width: 75px;
+            font-size: 15px;
+        }
+
+        #finalscore {
+            width: 60%;
+            float: right;
+        }
+
+        #cities {}
+
+        #settlements {}
+
+        #longestroad {}
+
+        #largestarmy {}
+
+        #victorypoints {}
+
+        input[type="submit"] {
+            border-radius: 5px;
+            background-color: #D82739;
+            color: white;
+            border-bottom: 5px solid #C12739;
+            border-right: 3px solid #C12739;
+            margin-top: 10px;
+            width: 175px;
+            font-size: 20px;
+            padding: 5px;
+            text-transform: uppercase;
+        }
+
+        input[type="submit"]:hover {
+            background: #8A2739;
+            border-bottom: 3px solid #832739;
+            border-right: 2px solid #832739;
+            margin-top: 12px;
+            text-transform: uppercase;
+        }
+
+        input[type="submit"]:active {
+            background: #8A2739;
+            border-bottom: 0px;
+            border-right: 0px;
+            margin-top: 15px;
+            text-transform: uppercase;
+        }
+
+        *:focus {
+            outline: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Settlers of Catan Score Keeper</h1>
+    <form id="score">
+        <fieldset id="cities">
+            <label for="cities">Number of Cities</label>
+            <br>
+            <select name="cities">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </fieldset>
+        <fieldset id="settlements">
+            <label for="settlements">Number of Settlements</label>
+            <br>
+            <select name="settlements">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </fieldset>
+        <fieldset id="victorypoints">
+            <label for="victorypoints">Victory Point Cards</label>
+            <br>
+            <select name="victorypoints">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </fieldset>
+        <fieldset id="longestroad">
+            <label for="longestroad">Longest Road</label>
+            <br>
+            <input type="radio" name="longestroad" value="yes" id="longestroadyes">
+            <label for="longestroadyes">Yes</label>
+            <br>
+            <input type="radio" name="longestroad" value="no" id="longestroadno" checked>
+            <label for="longestroadno">No</label>
+            <br>
+        </fieldset>
+        <fieldset id="largestarmy">
+            <label for="largestarmy">Largest Army</label>
+            <br>
+            <input type="radio" name="largestarmy" value="yes" id="largestarmyes">
+            <label for="largestarmyes">Yes</label>
+            <br>
+            <input type="radio" name="largestarmy" value="no" id="largestarmyno" checked>
+            <label for="largestarmyno">No</label>
+            <br>
+        </fieldset>
+        <input type="submit" value="Submit" onclick="getFormData()">
+    </form>
+    <div id="finalscore">
+        <h2>Final Score</h2>
+        <h3 id="yourscore"></h3>
+    </div>
+    <script>
+        var finalScore = function getFormData() {
+            var citiesScore = document.getElementById('cities').value;
+            var settlementsScore = document.getElementById('settlements').value;
+            var longestroadScore = document.getElementById('longestroad').value;
+            var largestarmyScore = document.getElementById('largestarmy').value;
+            var victorypointsScore = document.getElementById('victorypoints').value;
+        }
+        document.getElementById("yourscore").innerHTML = citiesScore;
+    </script>
+</body>
+
+</html>
